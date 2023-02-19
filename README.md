@@ -1,4 +1,14 @@
-# Google Oauth 2.0 Login for python Flask application
+# Vue JS vite + Flask
+
+# Modes
+
+* Local dev: vite
+* Preview: 
+* Prod 
+
+
+
+## Google Oauth 2.0 Login for python Flask application
 
 **Set up Guide:**
 1. git clone https://github.com/piyush-singhal/oauth-python.git
