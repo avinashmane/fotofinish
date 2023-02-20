@@ -25,7 +25,7 @@ blueprint = make_google_blueprint(
     reprompt_consent=True,
     scope=["profile", "email"]
 )
-app.register_blueprint(blueprint, url_prefix="/login/redirect")
+app.register_blueprint(blueprint, url_prefix="/login")
 
 
 @app.route("/")
@@ -36,7 +36,7 @@ def get_resource(path='index.html'):  # pragma: no cover
     print(path,app.__dict__)
     return app.send_static_file(path)
 
-@app.route("/login")
+@app.route("/logon")
 def login():
     google_data = None
     user_info_endpoint = '/oauth2/v2/userinfo'
@@ -47,9 +47,9 @@ def login():
                            google_data=google_data,
                            fetch_url=google.base_url + user_info_endpoint)
 
-@app.route('/login/redirect')
+@app.route('/login')
 def login_direct():
-    return redirect(url_for('login/redirect'))
+    return redirect(url_for('login'))
 
 @app.errorhandler(404)
 def not_found():
